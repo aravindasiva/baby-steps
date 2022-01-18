@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <div>
-        Summa va da
+        Summa va
       </div>
     </>
   )
