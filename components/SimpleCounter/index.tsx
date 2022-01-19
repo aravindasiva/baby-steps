@@ -2,20 +2,16 @@ import { Box, Button, Center, Divider, Flex, IconButton, Spacer, Stack, Text } f
 import React, { useState } from 'react'
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 
+const SimpleCounter = ({ val }) => {
 
-const SimpleCounter = ({val}) => {
   const [count, setCount] = useState(val);
-
 
   const add = () => {
     setCount(c => c + 1);
-
-
   }
 
   const sub = () => {
     setCount(c => Math.max(c - 1, 0));
-
   }
 
   return (
@@ -34,9 +30,9 @@ const SimpleCounter = ({val}) => {
         <Divider variant='solid' borderColor='steelblue' />
         <Box p={4} >
           <Center px={6}>
-            <IconButton aria-label='Add' icon={<FiArrowUp />} borderRadius='full' onClick={add} colorScheme='teal'/>
+            <IconButton aria-label='Add' icon={<FiArrowUp />} borderRadius='full' onClick={add} colorScheme='teal' />
             <Spacer />
-            <IconButton aria-label='sub' icon={<FiArrowDown />} borderRadius='full' onClick={sub} colorScheme='teal' isDisabled={count===0?true:false} />
+            <IconButton aria-label='sub' icon={<FiArrowDown />} borderRadius='full' onClick={sub} colorScheme='teal' isDisabled={count === 0 ? true : false} />
           </Center>
         </Box>
       </Box>
