@@ -15,6 +15,9 @@ const SiteHeader = () => {
        <Link href='/hooks'>
          Hooks
        </Link>
+       <Link href='/apitest'>
+         Api Examples
+       </Link>
      </Stack>
    </Flex>
   )
