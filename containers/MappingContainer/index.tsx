@@ -1,8 +1,9 @@
 import { Box, Button, Center, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import Marvel from '../../components/Marvel';
 import SiteLayout from '../../components/SiteLayout';
 import { BsArrowDownShort } from 'react-icons/bs';
+import { IHero } from '../../components/Marvel/MarvelCard';
 
 
 const heros = [
@@ -51,23 +52,31 @@ const heros = [
 ]
 
 const MappingContainer = () => {
+
+  const [selectedOption, setSelectedOption] = useState<IHero>(null);
+
+  const onOptionClicked = (selectedOption: IHero) => {
+    setSelectedOption(selectedOption);
+    console.log(selectedOption);
+  };
+
+
   return (
     <SiteLayout>
       <Center>
         <Menu >
-          <MenuButton bgColor='teal.200' as={Button} rightIcon={<BsArrowDownShort />}>
-            Marvel
+          <MenuButton _focus={{ outline: 'none' }} bgColor='teal.200' as={Button} rightIcon={<BsArrowDownShort />}>
+            {selectedOption ? selectedOption.author : "Marvel"}
           </MenuButton>
           <MenuList bgColor='teal.200'>
             {heros.map((hero) => (
-
-              <MenuItem> {hero.author}</MenuItem>
+              <MenuItem onClick={() => onOptionClicked(hero)} key={hero.id}> {hero.author}</MenuItem>
             ))}
           </MenuList>
         </Menu>
       </Center>
       <Box maxW='100vw'>
-        <Marvel heros={heros} />
+        <Marvel selectedOption={selectedOption} heros={heros} />
       </Box>
 
     </SiteLayout>
