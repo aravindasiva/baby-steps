@@ -18,6 +18,9 @@ const SiteHeader = () => {
        <Link href='/apitest'>
          Api Examples
        </Link>
+       <Link href='/mapping'>
+         Mapping
+       </Link>
      </Stack>
    </Flex>
   )
