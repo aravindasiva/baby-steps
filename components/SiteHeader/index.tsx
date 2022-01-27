@@ -13,22 +13,23 @@ const SiteHeader = () => {
       fontSize={18}
       fontWeight='semibold'
       textColor='black'
+      
     >
       <Box>
         Baby Steps
       </Box>
       <Spacer />
       <Stack direction={'row'} spacing={6}>
-        <Link style={{ textDecoration: 'none' }} href='/'>
+        <Link _focus={{outline: 'none'}} style={{ textDecoration: 'none'}} href='/'>
           Home
         </Link>
-        <Link style={{ textDecoration: 'none' }} href='/hooks'>
+        <Link _focus={{outline: 'none'}} style={{ textDecoration: 'none' }} href='/hooks'>
           Hooks
         </Link>
-        <Link style={{ textDecoration: 'none' }} href='/apitest'>
+        <Link _focus={{outline: 'none'}} style={{ textDecoration: 'none' }} href='/apitest'>
           Api Examples
         </Link>
-        <Link style={{ textDecoration: 'none' }} href='/mapping'>
+        <Link _focus={{outline: 'none'}} style={{ textDecoration: 'none' }} href='/mapping'>
           Mapping
         </Link>
       </Stack>
