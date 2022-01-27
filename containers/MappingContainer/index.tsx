@@ -1,4 +1,4 @@
-import { Box, Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import { Box, Button, Center, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import React from 'react';
 import Marvel from '../../components/Marvel';
 import SiteLayout from '../../components/SiteLayout';
@@ -38,13 +38,13 @@ const heros = [
   },
   {
     id: 6,
-    image: "https://static.wikia.nocookie.net/marvelcrossroads/images/9/90/Black_Widow_%28Natalia_Romanova%29_%28Marvel_Resuited%29.png/revision/latest?cb=20190422020657",
+    image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/690f7ab7-9b53-4308-b997-629e00d3a62e/d1tjm0g-75c77085-01fc-4536-970c-f442cb476a2c.jpg/v1/fill/w_594,h_800,q_75,strp/black_widow_by_manji675_d1tjm0g-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvNjkwZjdhYjctOWI1My00MzA4LWI5OTctNjI5ZTAwZDNhNjJlXC9kMXRqbTBnLTc1Yzc3MDg1LTAxZmMtNDUzNi05NzBjLWY0NDJjYjQ3NmEyYy5qcGciLCJ3aWR0aCI6Ijw9NTk0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.PoYwGP7onETYMouUtT0AgQ59aQbY8zIRuU7NU9cLAYE",
     quote: "This Is Just Like Budapest All Over Again.",
     author: "Black Widow"
   },
   {
     id: 7,
-    image: "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/0/0e/Warrior_Thanos.jpg/revision/latest?cb=20210818013102",
+    image: "https://miro.medium.com/max/564/1*1R2Yt-uMk3k--vi7bWOqSA.jpeg",
     quote: "You have my respect, stark. When I'm done, half of humanity will still be alive. I hope they remember you.",
     author: "Thanos"
   }
@@ -53,18 +53,19 @@ const heros = [
 const MappingContainer = () => {
   return (
     <SiteLayout>
-      <Menu>
-        <MenuButton as={Button} rightIcon={<BsArrowDownShort />}>
-          Marvel
-        </MenuButton>
-        <MenuList>
-          {heros.map((hero)=>(
-            
-            <MenuItem> {hero.author}</MenuItem>
-          ))}
+      <Center>
+        <Menu >
+          <MenuButton bgColor='teal.200' as={Button} rightIcon={<BsArrowDownShort />}>
+            Marvel
+          </MenuButton>
+          <MenuList bgColor='teal.200'>
+            {heros.map((hero) => (
 
-        </MenuList>
-      </Menu>
+              <MenuItem> {hero.author}</MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
+      </Center>
       <Box maxW='100vw'>
         <Marvel heros={heros} />
       </Box>
