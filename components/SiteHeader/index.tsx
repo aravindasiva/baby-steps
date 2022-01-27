@@ -3,23 +3,36 @@ import React from 'react'
 
 const SiteHeader = () => {
   return (
-   <Flex p={4}>
-     <Box>
-       Baby Steps
-     </Box>
-     <Spacer/>
-     <Stack direction={'row'} spacing={6}>
-       <Link href='/'>
-         Home
-       </Link>
-       <Link href='/hooks'>
-         Hooks
-       </Link>
-       <Link href='/apitest'>
-         Api Examples
-       </Link>
-     </Stack>
-   </Flex>
+    <Flex align="center"
+      justify="space-between"
+      wrap="wrap"
+      w="100%"
+      mb={8}
+      p={8}
+      bgColor='teal.200'
+      fontSize={18}
+      fontWeight='semibold'
+      textColor='black'
+    >
+      <Box>
+        Baby Steps
+      </Box>
+      <Spacer />
+      <Stack direction={'row'} spacing={6}>
+        <Link style={{ textDecoration: 'none' }} href='/'>
+          Home
+        </Link>
+        <Link style={{ textDecoration: 'none' }} href='/hooks'>
+          Hooks
+        </Link>
+        <Link style={{ textDecoration: 'none' }} href='/apitest'>
+          Api Examples
+        </Link>
+        <Link style={{ textDecoration: 'none' }} href='/mapping'>
+          Mapping
+        </Link>
+      </Stack>
+    </Flex>
   )
 }
 
